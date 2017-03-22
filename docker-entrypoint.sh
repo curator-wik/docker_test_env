@@ -2,8 +2,6 @@
 
 /usr/sbin/service vsftpd start
 
-CONTAINER_CMD="/curator/prophusion-tests.sh"
-
 # If xdebug connect back to the docker host is requested, set environment
 if [ "$DOCKER_REMOTE_XDEBUG" == "1" ]
 then
@@ -20,4 +18,5 @@ then
 #  export PHPUNIT
 fi
 
+CONTAINER_CMD="/curator/prophusion-tests.sh"
 . /prophusion-base-entrypoint.sh
