@@ -16,3 +16,6 @@ mkdir /home/ftptest_chroot/www && chown ftptest_chroot:ftptest_chroot /home/ftpt
 # Make the user's home directory owned by root, so it is not writable by ftptest and vsftpd will chroot it
 chown root:root /home/ftptest_chroot
 
+ln -s /home/ftptest/www /home/ftptest/good_dirlink
+touch /home/ftptest/a_file
+ln -s /home/ftptest/a_file /home/ftptest/good_filelink
