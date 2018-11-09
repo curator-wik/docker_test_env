@@ -1,7 +1,8 @@
 #!/bin/bash
 # Extract everything.
 cd /
-tar xf files.tar
+umask 0022
+tar --no-same-owner --no-same-permissions -xf files.tar
 
 ln -s /usr/local/bin/phpunit-5.5.4.phar /usr/local/bin/phpunit-5.5
 
