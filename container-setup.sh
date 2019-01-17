@@ -12,6 +12,8 @@ usermod -d /home/www-data -s /bin/bash www-data
 adduser --disabled-password --gecos 'FTP Test' ftptest
 echo 'ftptest:Asdf1234' | chpasswd
 mkdir /home/ftptest/www && chown ftptest:ftptest /home/ftptest/www && chmod 0755 /home/ftptest/www
+mkdir -p /home/ftptest/world_writable_test_location/existing_dir && chown -R ftptest:ftptest /home/ftptest/world_writable_test_location && chmod -R 0777 /home/ftptest/world_writable_test_location
+echo 'a file' >  /home/ftptest/world_writable_test_location/existing_file && chmod 0777 /home/ftptest/world_writable_test_location/existing_file
 
 adduser --disabled-password --gecos 'FTP Test Chroot' ftptest_chroot
 echo 'ftptest_chroot:Asdf1234' | chpasswd
